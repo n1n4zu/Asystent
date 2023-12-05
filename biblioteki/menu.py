@@ -9,4 +9,5 @@ def menu():
 [8] szyfrowanie
 [9] deszyfrowanie
 [10] syntezator
+[11] wyloguj
 [?] wyjdź""")

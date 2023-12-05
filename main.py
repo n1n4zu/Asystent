@@ -14,7 +14,11 @@ from webbrowser import open
 import subprocess
 
 
+global opcja
+
+
 def main():
+    global opcja
     czysc()
 
     if loguj():
@@ -87,12 +91,19 @@ def main():
                     message = input('Podaj szyfr do złamania\n>')
                     syntezator(message)
 
+                case 'wyloguj':
+                    break
+
                 case 'wyjdź':
                     break
 
                 case _:
                     print('Nie wybrano właściwej opcji')
                     input()
+
+    if opcja == 'wyloguj':
+        opcja = ''
+        main()
 
 
 main()
