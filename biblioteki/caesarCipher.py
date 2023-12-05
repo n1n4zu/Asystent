@@ -1,4 +1,4 @@
-import biblioteki.pyperclip
+from biblioteki.czysc import czysc
 
 
 def szyfrowanie(message):
@@ -27,5 +27,7 @@ def szyfrowanie(message):
             translated += SYMBOLS[translatedIndex]
         else:
             translated += symbol
+
+    czysc()
 
     return print(translated)

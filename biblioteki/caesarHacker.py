@@ -1,3 +1,6 @@
+from biblioteki.czysc import czysc
+
+
 def deszyfrowanie(message):
     SYMBOLS = 'AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUVWXYZŹŻaąbcćdeęfghijklłmnńoópqrsśtuvwxyzźż1234567890 !?.'
 
@@ -15,5 +18,7 @@ def deszyfrowanie(message):
                 translated += SYMBOLS[translatedIndex]
             else:
                 translated += symbol
+
+        czysc()
 
         print('Klucz #%s: %s' % (key, translated))

@@ -1,6 +1,3 @@
-import os
-import platform
-import psutil
 from biblioteki.pogoda import pogoda
 from biblioteki.menu import menu
 from biblioteki.loguj import loguj
@@ -31,7 +28,7 @@ def main():
 
             opcja = input('Co chcesz zrobić?\n>')
 
-            match opcja:
+            match opcja.lower():
                 case 'wyłącz system':
                     zamknij()
                     break
@@ -95,6 +92,7 @@ def main():
                     break
 
                 case 'wyjdź':
+                    czysc()
                     break
 
                 case _:
