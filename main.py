@@ -7,22 +7,19 @@ from biblioteki.loguj import loguj
 from biblioteki.caesarCipher import szyfrowanie
 from biblioteki.caesarHacker import deszyfrowanie
 from biblioteki.syntezator import syntezator
+from biblioteki.wylacz import zamknij
+from biblioteki.programy import program
+from biblioteki.czysc import czysc
 from webbrowser import open
 import subprocess
 
 
 def main():
-    if platform.system() == "Windows":
-        os.system('cls')
-    elif platform.system() == "Linux":
-        os.system('clear')
+    czysc()
 
     if loguj():
         while True:
-            if platform.system() == "Windows":
-                os.system('cls')
-            elif platform.system() == "Linux":
-                os.system('clear')
+            czysc()
 
             menu()
 
@@ -32,30 +29,8 @@ def main():
 
             match opcja:
                 case 'wyłącz system':
-                    PROGRAMY = ['pycharm64.exe', 'cmd.exe', 'asystent.exe', 'terminal', 'pycharm64']
-                    if platform.system() == "Windows":
-                        os.system('shutdown /s /t 10')
-                        for program in PROGRAMY:
-                            for proc in psutil.process_iter(['pid', 'name']):
-                                if program.lower() in proc.info['name'].lower():
-                                    try:
-                                        os.kill(proc.info['pid'], 9)
-                                        print(f"Zamknięto {proc.info['name']} (PID: {proc.info['pid']})")
-                                    except PermissionError as e:
-                                        print(e)
-                        break
-
-                    elif platform.system() == "Linux":
-                        os.system('poweroff')
-                        for program in PROGRAMY:
-                            for proc in psutil.process_iter(['pid', 'name']):
-                                if program.lower() in proc.info['name'].lower():
-                                    try:
-                                        os.kill(proc.info['pid'], 9)
-                                        print(f"Zamknięto {proc.info['name']} (PID: {proc.info['pid']})")
-                                    except PermissionError as e:
-                                        print(e)
-                        break
+                    zamknij()
+                    break
 
                 case 'jaka jest pogoda':
                     miasto = input('Jakie miasto?\n>')
@@ -95,14 +70,7 @@ def main():
                             else:
                                 programy.append(pro + '.exe')
 
-                    for program in programy:
-                        for proc in psutil.process_iter(['pid', 'name']):
-                            if program.lower() in proc.info['name'].lower():
-                                try:
-                                    os.kill(proc.info['pid'], 9)
-                                    print(f"Zamknięto {proc.info['name']} (PID: {proc.info['pid']})")
-                                except PermissionError as e:
-                                    print(e)
+                    program(programy)
                     input()
 
                 case 'szyfrowanie':
