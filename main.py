@@ -1,6 +1,5 @@
 from biblioteki.int_spd import int_spd
 from biblioteki.ip import ip
-from biblioteki.kur import kur
 from biblioteki.pogoda import pogoda
 from biblioteki.menu import menu
 from biblioteki.loguj import loguj
