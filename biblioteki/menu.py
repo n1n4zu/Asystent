@@ -12,6 +12,5 @@ def menu():
 [11] zdobądź adres IP
 [12] wygeneruj kod QR
 [13] prędkość internetu
-[14] kod KUR
-[15] wyloguj
+[14] wyloguj
 [?] wyjdź""")
