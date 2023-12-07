@@ -1,4 +1,3 @@
-from biblioteki.int_spd import int_spd
 from biblioteki.ip import ip
 from biblioteki.pogoda import pogoda
 from biblioteki.menu import menu
@@ -97,14 +96,6 @@ def main():
                 case 'wygeneruj kod qr':
                     url = input('Podaj adres url\n>')
                     qr(url)
-                    input()
-
-                case 'prędkość internetu':
-                    print(int_spd())
-                    input()
-
-                case 'kod kur':
-                    kur()
                     input()
 
                 case 'wyloguj':

@@ -11,6 +11,5 @@ def menu():
 [10] syntezator
 [11] zdobądź adres IP
 [12] wygeneruj kod QR
-[13] prędkość internetu
-[14] wyloguj
+[13] wyloguj
 [?] wyjdź""")
