@@ -28,12 +28,14 @@ def pogoda(miasto):
         pogoda = 'Mgła'
     elif pogoda == 'Sunny':
         pogoda = 'Słonecznie'
+    elif pogoda == 'Patchy light snow':
+        pogoda = 'Lekki śnieg'
 
     czysc()
 
     return f"""Miasto: {miasto}
 Kraj: {kraj}
 Temperatura: {temperatura}°C
-Wiatr: {wiatr}km/h'
+Wiatr: {wiatr}km/h
 Współrzędne: {rownoleznik}N, {poludnik}E
 Pogoda: {pogoda}"""

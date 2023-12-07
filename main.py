@@ -1,14 +1,17 @@
+from biblioteki.int_spd import int_spd
+from biblioteki.ip import ip
+from biblioteki.kur import kur
 from biblioteki.pogoda import pogoda
 from biblioteki.menu import menu
 from biblioteki.loguj import loguj
 from biblioteki.caesarCipher import szyfrowanie
 from biblioteki.caesarHacker import deszyfrowanie
+from biblioteki.qr import qr
 from biblioteki.syntezator import syntezator
 from biblioteki.wylacz import zamknij
 from biblioteki.programy import program
 from biblioteki.czysc import czysc
 from webbrowser import open
-import subprocess
 
 
 global opcja
@@ -50,8 +53,8 @@ def main():
                 case 'włącz github':
                     open('https://github.com/')
 
-                case 'uruchom steam':
-                    subprocess.Popen(r"C:\Program Files (x86)\Steam\steam.exe")
+                case 'włącz twitch':
+                    open('https://twitch.tv/')
 
                 case 'zamknij programy':
                     programy = []
@@ -79,14 +82,31 @@ def main():
                     szyfrowanie(message)
                     input()
 
-                case 'deszyfrowanie':
+                case 'brute force':
                     message = input('Podaj szyfr do złamania\n>')
                     deszyfrowanie(message)
                     input()
 
                 case 'syntezator':
-                    message = input('Podaj szyfr do złamania\n>')
+                    message = input('Co mam powiedzieć?\n>')
                     syntezator(message)
+
+                case 'zdobądź adres ip':
+                    print(ip())
+                    input()
+
+                case 'wygeneruj kod qr':
+                    url = input('Podaj adres url\n>')
+                    qr(url)
+                    input()
+
+                case 'prędkość internetu':
+                    print(int_spd())
+                    input()
+
+                case 'kod kur':
+                    kur()
+                    input()
 
                 case 'wyloguj':
                     break

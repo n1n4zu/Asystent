@@ -1,13 +1,17 @@
 def menu():
     print("""[1] wyłącz system
 [2] jaka jest pogoda
-[3] włącz youtube
-[4] włącz youtube music
-[5] włącz github
-[6] uruchom steam
+[3] włącz YouTube
+[4] włącz YouTube Music
+[5] włącz Github
+[6] włącz Twitch
 [7] zamknij programy 
 [8] szyfrowanie
-[9] deszyfrowanie
+[9] brute force
 [10] syntezator
-[11] wyloguj
+[11] zdobądź adres IP
+[12] wygeneruj kod QR
+[13] prędkość internetu
+[14] kod KUR
+[15] wyloguj
 [?] wyjdź""")

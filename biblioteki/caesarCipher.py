@@ -1,4 +1,5 @@
 from biblioteki.czysc import czysc
+from biblioteki.pyperclip import copy
 
 
 def szyfrowanie(message):
@@ -30,4 +31,5 @@ def szyfrowanie(message):
 
     czysc()
 
+    copy(translated)
     return print(translated)
