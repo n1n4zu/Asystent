@@ -1,0 +1,5 @@
+requests
+psutil
+pyqrcode
+pyttsx3
+pypng

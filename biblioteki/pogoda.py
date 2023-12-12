@@ -4,8 +4,7 @@ from biblioteki.czysc import czysc
 
 
 def pogoda(miasto):
-    host = json.loads(requests.get(
-        f'https://api.weatherapi.com/v1/current.json?key=d37e9525eeea43f59a1190826232610%20&q={miasto}&aqi=no').content)
+    host = json.loads(requests.get(f'https://api.weatherapi.com/v1/current.json?key=d37e9525eeea43f59a1190826232610%20&q={miasto}&aqi=no').content)
 
     kraj = host['location']['country']
     rownoleznik = host['location']['lat']
