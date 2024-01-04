@@ -3,3 +3,4 @@ psutil
 pyqrcode
 pyttsx3
 pypng
+ping3

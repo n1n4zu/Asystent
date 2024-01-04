@@ -15,20 +15,29 @@ def pogoda(miasto):
 
     if pogoda == 'Clear':
         pogoda = 'Bezchmurnie'
+
     elif pogoda == 'Cloud' or pogoda == 'Overcast':
         pogoda = 'Pochmurnie'
+
     elif pogoda == 'Partly cloudy':
         pogoda = 'Cześciowe zachmurzenie'
+
     elif pogoda == 'Rain':
         pogoda = 'Pada deszcz'
     elif pogoda == 'Snow':
+
         pogoda = 'Pada śnieg'
     elif pogoda == 'Mist':
         pogoda = 'Mgła'
+
     elif pogoda == 'Sunny':
         pogoda = 'Słonecznie'
+
     elif pogoda == 'Patchy light snow':
         pogoda = 'Lekki śnieg'
+
+    elif 'Light rain':
+        pogoda = 'Lekki deszcz'
 
     czysc()
 

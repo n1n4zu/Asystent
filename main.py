@@ -1,7 +1,7 @@
+from biblioteki.loguj import loguj
 from biblioteki.ip import ip
 from biblioteki.pogoda import pogoda
 from biblioteki.menu import menu
-from biblioteki.loguj import loguj
 from biblioteki.caesarCipher import szyfrowanie
 from biblioteki.caesarHacker import deszyfrowanie
 from biblioteki.qr import qr
@@ -10,6 +10,7 @@ from biblioteki.wylacz import zamknij
 from biblioteki.programy import program
 from biblioteki.czysc import czysc
 from webbrowser import open
+from biblioteki.blackjack import blackjack
 
 
 global opcja
@@ -97,6 +98,9 @@ def main():
                     url = input('Podaj adres url\n>')
                     qr(url)
                     input()
+
+                case 'blackjack':
+                    blackjack()
 
                 case 'wyloguj':
                     break
