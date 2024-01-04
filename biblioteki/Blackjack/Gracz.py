@@ -2,9 +2,8 @@ class Gracz:
     def __init__(self):
         self.imie = 'Gracz'
         self.suma = 0
-
-    karty = []
-    reka = []
+        self.karty = []
+        self.reka = []
 
     def aktSum(self):
         self.suma = 0

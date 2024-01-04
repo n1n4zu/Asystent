@@ -68,12 +68,11 @@ wartosci = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'walet', 'dama', 'kró
 
 
 class Krupier:
-    karty = []
-    reka = []
-
     def __init__(self):
         self.imie = 'Krupier'
         self.suma = 0
+        self.karty = []
+        self.reka = []
 
     def aktSum(self):
         self.suma = 0

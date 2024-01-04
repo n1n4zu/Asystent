@@ -11,5 +11,6 @@ def menu():
 [10] syntezator
 [11] zdobądź adres IP
 [12] wygeneruj kod QR
-[13] wyloguj
+[13] blackjack
+[14] wyloguj
 [?] wyjdź""")

@@ -1,28 +1,31 @@
-from Blackjack.Krupier import Krupier
-from Blackjack.Gracz import Gracz
-from Blackjack.Clear import Clear
+from biblioteki.Blackjack.Krupier import Krupier
+from biblioteki.Blackjack.Gracz import Gracz
+from biblioteki.Blackjack.Clear import Clear
+
+global dob
 
 
 def blackjack():
-    global dob
-
     while True:
         Clear()
 
         krupier = Krupier()
 
-        gracz1 = Gracz()
+        gracz = Gracz()
 
-        gracze = [gracz1, krupier]
+        krupier.zero(gracz)
+        krupier.zero(krupier)
+
+        gracze = [gracz, krupier]
 
         for i in gracze:
             krupier.dajKarty(i)
 
-        gracz1.pokaz()
+        gracz.pokaz()
         print()
         krupier.pokaz()
 
-        if gracz1.suma == 21:
+        if gracz.suma == 21:
             print()
 
             print('Blackjack!')
@@ -43,7 +46,7 @@ def blackjack():
 
             continue
 
-        if gracz1.suma == krupier.suma == 21:
+        if gracz.suma == krupier.suma == 21:
             print()
 
             print('Blackjack!')
@@ -54,19 +57,19 @@ def blackjack():
 
             continue
 
-        while gracz1.wynik() and gracz1.suma < 21:
+        while gracz.wynik() and gracz.suma < 21:
             dob = input('Dobrać kartę? (tak\\nie)\n')
 
             if dob == 'tak':
-                krupier.dobierzKarte(gracz1)
+                krupier.dobierzKarte(gracz)
 
                 Clear()
 
-                gracz1.pokaz()
+                gracz.pokaz()
                 print()
                 krupier.pokaz()
 
-                gracz1.aktSum()
+                gracz.aktSum()
 
             elif dob == 'nie':
                 while krupier.suma < 18:
@@ -75,7 +78,7 @@ def blackjack():
 
                 Clear()
 
-                gracz1.pokaz()
+                gracz.pokaz()
                 print()
                 krupier.pokaz()
 
@@ -84,7 +87,7 @@ def blackjack():
             else:
                 Clear()
 
-                gracz1.pokaz()
+                gracz.pokaz()
                 print()
                 krupier.pokaz()
 
@@ -92,17 +95,17 @@ def blackjack():
 
         print()
 
-        if not gracz1.wynik():
+        if not gracz.wynik():
             print("Przegrałeś")
 
         else:
-            if gracz1.suma > krupier.suma:
+            if gracz.suma > krupier.suma:
                 print("Wygrał gracz")
 
-            elif gracz1.suma < krupier.suma <= 21:
+            elif gracz.suma < krupier.suma <= 21:
                 print("Wygrał krupier")
 
-            elif gracz1.suma < krupier.suma > 21:
+            elif gracz.suma < krupier.suma > 21:
                 print("Wygrał gracz")
 
             else:
@@ -113,5 +116,5 @@ def blackjack():
         if gra != 'tak':
             break
 
-        krupier.zero(gracz1)
+        krupier.zero(gracz)
         krupier.zero(krupier)
